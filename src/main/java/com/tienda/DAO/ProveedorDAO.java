@@ -53,7 +53,7 @@ public class ProveedorDAO {
         }
     }
 
-    public ArrayList<ProveedorDTO> consultarproveedor(int nit) {
+    public ArrayList<ProveedorDTO> consultarProveedor(int nit) {
         ArrayList<ProveedorDTO> miProveedor = new ArrayList<ProveedorDTO>();
         Conexion conex = new Conexion();
         try {

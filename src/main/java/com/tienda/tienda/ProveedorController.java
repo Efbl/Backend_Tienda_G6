@@ -23,7 +23,7 @@ public class ProveedorController {
     @RequestMapping("/consultarProveedor")
     public ArrayList<ProveedorDTO> consultarProveedor(int nit) {
         ProveedorDAO dao = new ProveedorDAO();
-        return dao.consultarproveedor(nit);
+        return dao.consultarProveedor(nit);
     }
 
     @RequestMapping("/listarProveedores")
