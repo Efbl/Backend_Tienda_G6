@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tienda.DAO.ClienteDAO;
 import com.tienda.DTO.ClienteDTO;
 
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:5000")
 @RestController
 public class ClienteController {
     @RequestMapping(value = "/registrarCliente", method = RequestMethod.POST)

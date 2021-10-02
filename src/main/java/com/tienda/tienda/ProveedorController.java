@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.tienda.DAO.ProveedorDAO;
 import com.tienda.DTO.ProveedorDTO;
 
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:5000")
 @RestController
 public class ProveedorController {
     @RequestMapping(value = "/registrarProveedor", method = RequestMethod.POST)

@@ -12,7 +12,7 @@ import com.tienda.DAO.UsuarioDAO;
 import com.tienda.DTO.LoginDTO;
 import com.tienda.DTO.UsuarioDTO;
 
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "http://localhost:5000")
 @RestController
 public class UsuarioController {
     @RequestMapping(value = "/registrarUsuario", method = RequestMethod.POST)
