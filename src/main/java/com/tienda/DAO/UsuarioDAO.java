@@ -138,4 +138,32 @@ public class UsuarioDAO {
             return false;
         }
     }
+
+    public ArrayList<UsuarioDTO> consultarUsuarioUsername(String username) {
+        ArrayList<UsuarioDTO> miUsuario = new ArrayList<UsuarioDTO>();
+        Conexion conex = new Conexion();
+        try {
+            PreparedStatement consulta = conex.getConnection()
+                    .prepareStatement("SELECT * FROM usuarios WHERE usuario = ?");
+            consulta.setString(1, username);
+            ResultSet rs = consulta.executeQuery();
+
+            if (rs.next()) {
+                UsuarioDTO usuario = new UsuarioDTO();
+                usuario.setCedulaUsuario(Integer.parseInt(rs.getString("cedula_usuario")));
+                usuario.setEmailUsuario(rs.getString("email_usuario"));
+                usuario.setNombreUsuario(rs.getString("nombre_usuario"));
+                usuario.setPassword(rs.getString("password"));
+                usuario.setUsuario(rs.getString("usuario"));
+                miUsuario.add(usuario);
+            }
+            rs.close();
+            consulta.close();
+            conex.desconectar();
+        } catch (Exception e) {
+            String message = "No se pudo consultar al usuario";
+            System.out.println(message);
+        }
+        return miUsuario;
+    }
 }

@@ -27,6 +27,12 @@ public class UsuarioController {
         return dao.consultarUsuario(cedula);
     }
 
+    @RequestMapping("/consultarUsuarioUsername")
+    public ArrayList<UsuarioDTO> consultarUsuarioUsername(String username) {
+        UsuarioDAO dao = new UsuarioDAO();
+        return dao.consultarUsuarioUsername(username);
+    }
+
     @RequestMapping("/listarUsuarios")
     public ArrayList<UsuarioDTO> listaDeUsuarios() {
         UsuarioDAO dao = new UsuarioDAO();
