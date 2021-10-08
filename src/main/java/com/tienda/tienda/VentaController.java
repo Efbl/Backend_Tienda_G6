@@ -1,6 +1,9 @@
 package com.tienda.tienda;
 
+import java.util.ArrayList;
+
 import com.tienda.DAO.VentaDAO;
+import com.tienda.DTO.VentaClienteDTO;
 import com.tienda.DTO.VentaDTO;
 
 import org.springframework.http.ResponseEntity;
@@ -22,5 +25,11 @@ public class VentaController {
             return ResponseEntity.ok(idGenerado);
         }
         return ResponseEntity.ok(0);
+    }
+
+    @RequestMapping("/listarVentasCliente")
+    public ArrayList<VentaClienteDTO> listaDeVentasCliente() {
+        VentaDAO dao = new VentaDAO();
+        return dao.listarVentasCliente();
     }
 }
